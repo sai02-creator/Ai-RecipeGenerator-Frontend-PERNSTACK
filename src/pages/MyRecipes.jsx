@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Clock, ChefHat, Trash2 } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import api from '../services/api';
 import toast from 'react-hot-toast';
-import { dummyRecipes } from '../data/dummyData';
 
 const MyRecipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [filteredRecipes, setFilteredRecipes] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCuisine, setSelectedCuisine] = useState('All');
     const [selectedDifficulty, setSelectedDifficulty] = useState('All');
@@ -16,13 +17,23 @@ const MyRecipes = () => {
     const difficulties = ['All', 'easy', 'medium', 'hard'];
 
     useEffect(() => {
-        // Load dummy recipes
-        setRecipes(dummyRecipes);
+        fetchRecipes();
     }, []);
 
     useEffect(() => {
         filterRecipes();
     }, [recipes, searchQuery, selectedCuisine, selectedDifficulty]);
+
+    const fetchRecipes = async () => {
+        try {
+            const response = await api.get('/recipes');
+            setRecipes(response.data.data.recipes);
+        } catch (error) {
+            toast.error('Failed to load recipes');
+        } finally {
+            setLoading(false);
+        }
+    };
 
     const filterRecipes = () => {
         let filtered = recipes;
@@ -45,13 +56,28 @@ const MyRecipes = () => {
         setFilteredRecipes(filtered);
     };
 
-    const handleDelete = (id) => {
+    const handleDelete = async (id) => {
         if (!confirm('Are you sure you want to delete this recipe?')) return;
 
-        // UI-only delete
-        setRecipes(recipes.filter(recipe => recipe.id !== id));
-        toast.success('Recipe deleted');
+        try {
+            await api.delete(`/recipes/${id}`);
+            setRecipes(recipes.filter(recipe => recipe.id !== id));
+            toast.success('Recipe deleted');
+        } catch (error) {
+            toast.error('Failed to delete recipe');
+        }
     };
+
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-gray-50">
+                <Navbar />
+                <div className="flex items-center justify-center h-96">
+                    <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen bg-gray-50">
