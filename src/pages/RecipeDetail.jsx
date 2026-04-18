@@ -2,37 +2,45 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Clock, Users, ChefHat, ArrowLeft, Trash2, Calendar } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import api from '../services/api';
 import toast from 'react-hot-toast';
-import { getRecipeById } from '../data/dummyData';
 
 const RecipeDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [recipe, setRecipe] = useState(null);
+    const [loading, setLoading] = useState(true);
     const [servings, setServings] = useState(4);
     const [checkedIngredients, setCheckedIngredients] = useState(new Set());
 
     useEffect(() => {
-        loadRecipe();
+        fetchRecipe();
     }, [id]);
 
-    const loadRecipe = () => {
-        const recipeData = getRecipeById(parseInt(id));
-        if (recipeData) {
+    const fetchRecipe = async () => {
+        try {
+            const response = await api.get(`/recipes/${id}`);
+            const recipeData = response.data.data.recipe;
             setRecipe(recipeData);
             setServings(recipeData.servings || 4);
-        } else {
-            toast.error('Recipe not found');
+        } catch (error) {
+            toast.error('Failed to load recipe');
             navigate('/recipes');
+        } finally {
+            setLoading(false);
         }
     };
 
-    const handleDelete = () => {
+    const handleDelete = async () => {
         if (!confirm('Are you sure you want to delete this recipe?')) return;
 
-        // UI-only delete
-        toast.success('Recipe deleted');
-        navigate('/recipes');
+        try {
+            await api.delete(`/recipes/${id}`);
+            toast.success('Recipe deleted');
+            navigate('/recipes');
+        } catch (error) {
+            toast.error('Failed to delete recipe');
+        }
     };
 
     const toggleIngredient = (index) => {
@@ -48,6 +56,17 @@ const RecipeDetail = () => {
     const adjustQuantity = (originalQty, originalServings) => {
         return ((originalQty * servings) / originalServings).toFixed(2);
     };
+
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-gray-50">
+                <Navbar />
+                <div className="flex items-center justify-center h-96">
+                    <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+            </div>
+        );
+    }
 
     if (!recipe) {
         return null;
