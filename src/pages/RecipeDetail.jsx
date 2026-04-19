@@ -62,7 +62,7 @@ const RecipeDetail = () => {
             <div className="min-h-screen bg-gray-50">
                 <Navbar />
                 <div className="flex items-center justify-center h-96">
-                    <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                 </div>
             </div>
         );
@@ -109,7 +109,7 @@ const RecipeDetail = () => {
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-6">
                         {recipe.cuisine_type && (
-                            <span className="px-3 py-1.5 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">
+                            <span className="px-3 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
                                 {recipe.cuisine_type}
                             </span>
                         )}
@@ -180,7 +180,7 @@ const RecipeDetail = () => {
                                     {servings !== originalServings && (
                                         <button
                                             onClick={() => setServings(originalServings)}
-                                            className="text-sm text-emerald-600 hover:text-emerald-700 font-medium"
+                                            className="text-sm text-blue-600 hover:text-blue-700 font-medium"
                                         >
                                             Reset
                                         </button>
@@ -203,7 +203,7 @@ const RecipeDetail = () => {
                                                 type="checkbox"
                                                 checked={isChecked}
                                                 onChange={() => toggleIngredient(index)}
-                                                className="mt-1 w-4 h-4 text-emerald-500 border-gray-300 rounded focus:ring-emerald-500"
+                                                className="mt-1 w-4 h-4 text-blue-500 border-gray-300 rounded focus:ring-blue-500"
                                             />
                                             <span className={`flex-1 ${isChecked ? 'line-through text-gray-400' : 'text-gray-700'}`}>
                                                 <span className="font-medium">{adjustedQty}</span> {ingredient.unit} {ingredient.name}
@@ -222,7 +222,7 @@ const RecipeDetail = () => {
                             <ol className="space-y-4">
                                 {recipe.instructions && recipe.instructions.map((step, index) => (
                                     <li key={index} className="flex gap-4">
-                                        <span className="shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-semibold">
+                                        <span className="shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-semibold">
                                             {index + 1}
                                         </span>
                                         <p className="text-gray-700 pt-1 flex-1">{step}</p>
@@ -247,9 +247,9 @@ const RecipeDetail = () => {
 
                         {/* User Notes */}
                         {recipe.user_notes && (
-                            <div className="bg-emerald-50 rounded-xl border border-emerald-200 p-6">
-                                <h3 className="font-semibold text-emerald-900 mb-2">📝 Notes</h3>
-                                <p className="text-emerald-800">{recipe.user_notes}</p>
+                            <div className="bg-blue-50 rounded-xl border border-blue-200 p-6">
+                                <h3 className="font-semibold text-blue-900 mb-2">📝 Notes</h3>
+                                <p className="text-blue-800">{recipe.user_notes}</p>
                             </div>
                         )}
                     </div>

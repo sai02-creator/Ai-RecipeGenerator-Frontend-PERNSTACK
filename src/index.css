@@ -4,12 +4,12 @@
 /* Modern Minimal Design System with Tailwind */
 
 @layer base {
-  :root {
-    /* Primary Colors - Emerald */
-    --color-primary: 16 185 129;
-    --color-primary-dark: 5 150 105;
-    --color-primary-light: 52 211 153;
-  }
+ :root {
+  /* Primary Colors - blue */
+  --color-primary: 59 130 246;       /* blue-500 */
+  --color-primary-dark: 37 99 235;   /* blue-600 */
+  --color-primary-light: 96 165 250; /* blue-400 */
+}
 
   * {
     @apply border-gray-200;

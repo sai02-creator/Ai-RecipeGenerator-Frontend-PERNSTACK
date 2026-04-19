@@ -172,7 +172,7 @@ const Settings = () => {
             <div className="min-h-screen bg-gray-50">
                 <Navbar />
                 <div className="flex items-center justify-center h-96">
-                    <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-8 h-8 border-4 border-blue500 border-t-transparent rounded-full animate-spin"></div>
                 </div>
             </div>
         );
@@ -193,8 +193,8 @@ const Settings = () => {
                     {/* Profile Section */}
                     <div className="bg-white rounded-xl border border-gray-200 p-6">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-                                <User className="w-5 h-5 text-emerald-600" />
+                            <div className="w-10 h-10 bg-blue100 rounded-lg flex items-center justify-center">
+                                <User className="w-5 h-5 text-blue600" />
                             </div>
                             <h2 className="text-xl font-semibold text-gray-900">Profile Information</h2>
                         </div>
@@ -206,7 +206,7 @@ const Settings = () => {
                                     type="text"
                                     value={profile.name}
                                     // onChange={(e) => setProfile({ ...profile, name: e.target.value })}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                                     required
                                 />
                             </div>
@@ -218,7 +218,7 @@ const Settings = () => {
                                     value={profile.email}
                                     disabled
                                     onChange={(e) => setProfile({ ...profile, email: e.target.value })}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                                     required
                                 />
                             </div>
@@ -226,7 +226,7 @@ const Settings = () => {
                             <button
                                 type="submit"
                                 disabled={saving}
-                                className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg font-medium transition-colors disabled:opacity-50"
+                                className="flex items-center gap-2 bg-blue500 hover:bg-blue600 text-white px-4 py-2 rounded-lg font-medium transition-colors disabled:opacity-50"
                             >
                                 <Save className="w-4 h-4" />
                                 {saving ? 'Saving...' : 'Save Profile'}
@@ -251,7 +251,7 @@ const Settings = () => {
                                     type="password"
                                     value={passwordData.currentPassword}
                                     onChange={(e) => setPasswordData({ ...passwordData, currentPassword: e.target.value })}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                                     required
                                 />
                             </div>
@@ -262,7 +262,7 @@ const Settings = () => {
                                     type="password"
                                     value={passwordData.newPassword}
                                     onChange={(e) => setPasswordData({ ...passwordData, newPassword: e.target.value })}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                                     required
                                     minLength={6}
                                 />
@@ -274,7 +274,7 @@ const Settings = () => {
                                     type="password"
                                     value={passwordData.confirmPassword}
                                     onChange={(e) => setPasswordData({ ...passwordData, confirmPassword: e.target.value })}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                                     required
                                     minLength={6}
                                 />
@@ -306,7 +306,7 @@ const Settings = () => {
                                             type="button"
                                             onClick={() => toggleDietary(option)}
                                             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${preferences.dietary_restrictions.includes(option)
-                                                ? 'bg-emerald-500 text-white'
+                                                ? 'bg-blue500 text-white'
                                                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                                 }`}
                                         >
@@ -327,7 +327,7 @@ const Settings = () => {
                                         allergies: e.target.value.split(',').map(a => a.trim()).filter(Boolean)
                                     })}
                                     placeholder="e.g., peanuts, shellfish, soy"
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                                 />
                             </div>
 
@@ -341,7 +341,7 @@ const Settings = () => {
                                             type="button"
                                             onClick={() => toggleCuisine(cuisine)}
                                             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${preferences.preferred_cuisines.includes(cuisine)
-                                                ? 'bg-emerald-500 text-white'
+                                                ? 'bg-blue500 text-white'
                                                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                                 }`}
                                         >
@@ -362,7 +362,7 @@ const Settings = () => {
                                     max="12"
                                     value={preferences.default_servings}
                                     onChange={(e) => setPreferences({ ...preferences, default_servings: parseInt(e.target.value) })}
-                                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue500"
                                 />
                                 <div className="flex justify-between text-xs text-gray-500 mt-1">
                                     <span>1</span>
@@ -378,7 +378,7 @@ const Settings = () => {
                                         type="button"
                                         onClick={() => setPreferences({ ...preferences, measurement_unit: 'metric' })}
                                         className={`flex-1 px-4 py-2 rounded-lg font-medium transition-colors ${preferences.measurement_unit === 'metric'
-                                            ? 'bg-emerald-500 text-white'
+                                            ? 'bg-blue500 text-white'
                                             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                             }`}
                                     >
@@ -388,7 +388,7 @@ const Settings = () => {
                                         type="button"
                                         onClick={() => setPreferences({ ...preferences, measurement_unit: 'imperial' })}
                                         className={`flex-1 px-4 py-2 rounded-lg font-medium transition-colors ${preferences.measurement_unit === 'imperial'
-                                            ? 'bg-emerald-500 text-white'
+                                            ? 'bg-blue500 text-white'
                                             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                             }`}
                                     >
@@ -400,7 +400,7 @@ const Settings = () => {
                             <button
                                 type="submit"
                                 disabled={saving}
-                                className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg font-medium transition-colors disabled:opacity-50"
+                                className="flex items-center gap-2 bg-blue500 hover:bg-blue600 text-white px-4 py-2 rounded-lg font-medium transition-colors disabled:opacity-50"
                             >
                                 <Save className="w-4 h-4" />
                                 {saving ? 'Saving...' : 'Save Preferences'}

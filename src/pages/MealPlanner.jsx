@@ -83,7 +83,7 @@ const MealPlanner = () => {
             <div className="min-h-screen bg-gray-50">
                 <Navbar />
                 <div className="flex items-center justify-center h-96">
-                    <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                 </div>
             </div>
         );
@@ -111,7 +111,7 @@ const MealPlanner = () => {
                         </button>
                         <button
                             onClick={() => setWeekStart(startOfWeek(new Date()))}
-                            className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-medium transition-colors"
+                            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
                         >
                             This Week
                         </button>
@@ -169,8 +169,8 @@ const MealPlanner = () => {
                                     >
                                         {meal ? (
                                             <div className="relative group">
-                                                <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
-                                                    <p className="text-sm font-medium text-emerald-900 line-clamp-2">
+                                                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                                    <p className="text-sm font-medium text-blue-900 line-clamp-2">
                                                         {meal.recipe_name}
                                                     </p>
                                                     <button
@@ -184,7 +184,7 @@ const MealPlanner = () => {
                                         ) : (
                                             <button
                                                 onClick={() => handleAddMeal(date, mealType)}
-                                                className="w-full h-full flex items-center justify-center text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors group"
+                                                className="w-full h-full flex items-center justify-center text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors group"
                                             >
                                                 <Plus className="w-6 h-6" />
                                             </button>
@@ -294,7 +294,7 @@ const AddMealModal = ({ date, mealType, recipes, onClose, onSuccess }) => {
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             placeholder="Search recipes..."
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                         />
                     </div>
 
@@ -305,7 +305,7 @@ const AddMealModal = ({ date, mealType, recipes, onClose, onSuccess }) => {
                                 <label
                                     key={recipe.id}
                                     className={`flex items-center gap-3 p-3 border rounded-lg cursor-pointer transition-colors ${selectedRecipe === recipe.id
-                                        ? 'border-emerald-500 bg-emerald-50'
+                                        ? 'border-blue-500 bg-blue-50'
                                         : 'border-gray-200 hover:bg-gray-50'
                                         }`}
                                 >
@@ -315,7 +315,7 @@ const AddMealModal = ({ date, mealType, recipes, onClose, onSuccess }) => {
                                         value={recipe.id}
                                         checked={selectedRecipe === recipe.id}
                                         onChange={(e) => setSelectedRecipe(e.target.value)}
-                                        className="w-4 h-4 text-emerald-500 border-gray-300 focus:ring-emerald-500"
+                                        className="w-4 h-4 text-blue-500 border-gray-300 focus:ring-blue-500"
                                     />
                                     <div className="flex-1">
                                         <p className="font-medium text-gray-900">{recipe.name}</p>
@@ -344,7 +344,7 @@ const AddMealModal = ({ date, mealType, recipes, onClose, onSuccess }) => {
                         <button
                             type="submit"
                             disabled={loading || !selectedRecipe}
-                            className="flex-1 px-4 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-medium transition-colors disabled:opacity-50"
+                            className="flex-1 px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors disabled:opacity-50"
                         >
                             {loading ? 'Adding...' : 'Add Meal'}
                         </button>

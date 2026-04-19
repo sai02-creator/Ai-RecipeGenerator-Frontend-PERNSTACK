@@ -114,7 +114,7 @@ const ShoppingList = () => {
             <div className="min-h-screen bg-gray-50">
                 <Navbar />
                 <div className="flex items-center justify-center h-96">
-                    <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                 </div>
             </div>
         );
@@ -141,7 +141,7 @@ const ShoppingList = () => {
                     <div className="flex flex-wrap gap-3 mb-6">
                         <button
                             onClick={() => setShowAddModal(true)}
-                            className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-lg font-medium transition-colors"
+                            className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2.5 rounded-lg font-medium transition-colors"
                         >
                             <Plus className="w-5 h-5" />
                             Add Item
@@ -194,7 +194,7 @@ const ShoppingList = () => {
                         <p className="text-gray-500 mb-4">Your shopping list is empty</p>
                         <button
                             onClick={() => setShowAddModal(true)}
-                            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-lg font-medium transition-colors"
+                            className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-medium transition-colors"
                         >
                             <Plus className="w-5 h-5" />
                             Add First Item
@@ -222,8 +222,8 @@ const ShoppingListItem = ({ item, onToggle, onDelete }) => {
                 className="shrink-0"
             >
                 <div className={`w-6 h-6 rounded border-2 flex items-center justify-center transition-all ${item.is_checked
-                    ? 'bg-emerald-500 border-emerald-500'
-                    : 'border-gray-300 hover:border-emerald-500'
+                    ? 'bg-blue-500 border-blue-500'
+                    : 'border-gray-300 hover:border-blue-500'
                     }`}>
                     {item.is_checked && <Check className="w-4 h-4 text-white" />}
                 </div>
@@ -236,7 +236,7 @@ const ShoppingListItem = ({ item, onToggle, onDelete }) => {
                 <p className={`text-sm ${item.is_checked ? 'text-gray-400' : 'text-gray-600'}`}>
                     {item.quantity} {item.unit}
                     {item.from_meal_plan && (
-                        <span className="ml-2 text-xs text-emerald-600">• From meal plan</span>
+                        <span className="ml-2 text-xs text-blue-600">• From meal plan</span>
                     )}
                 </p>
             </div>
@@ -296,7 +296,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                             type="text"
                             value={formData.ingredient_name}
                             onChange={(e) => setFormData({ ...formData, ingredient_name: e.target.value })}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                             required
                         />
                     </div>
@@ -309,7 +309,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                                 step="0.01"
                                 value={formData.quantity}
                                 onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                                 required
                             />
                         </div>
@@ -319,7 +319,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                             <select
                                 value={formData.unit}
                                 onChange={(e) => setFormData({ ...formData, unit: e.target.value })}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                             >
                                 <option value="pieces">Pieces</option>
                                 <option value="kg">Kilograms</option>
@@ -338,7 +338,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                         <select
                             value={formData.category}
                             onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                         >
                             {CATEGORIES.map(cat => (
                                 <option key={cat} value={cat}>{cat}</option>
@@ -357,7 +357,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="flex-1 px-4 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-medium transition-colors disabled:opacity-50"
+                            className="flex-1 px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors disabled:opacity-50"
                         >
                             {loading ? 'Adding...' : 'Add Item'}
                         </button>

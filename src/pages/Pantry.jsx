@@ -78,7 +78,7 @@ const Pantry = () => {
             <div className="min-h-screen bg-gray-50">
                 <Navbar />
                 <div className="flex items-center justify-center h-96">
-                    <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-8 h-8 border-4 border-blue500 border-t-transparent rounded-full animate-spin"></div>
                 </div>
             </div>
         );
@@ -97,7 +97,7 @@ const Pantry = () => {
                     </div>
                     <button
                         onClick={() => setShowAddModal(true)}
-                        className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-lg font-medium transition-colors"
+                        className="flex items-center gap-2 bg-blue500 hover:bg-blue600 text-white px-4 py-2.5 rounded-lg font-medium transition-colors"
                     >
                         <Plus className="w-5 h-5" />
                         Add Item
@@ -130,7 +130,7 @@ const Pantry = () => {
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 placeholder="Search ingredients..."
-                                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                             />
                         </div>
 
@@ -190,7 +190,7 @@ const CategoryButton = ({ label, active, onClick }) => (
     <button
         onClick={onClick}
         className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${active
-                ? 'bg-emerald-500 text-white'
+                ? 'bg-blue500 text-white'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
     >
@@ -292,7 +292,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                             type="text"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                             required
                         />
                     </div>
@@ -305,7 +305,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                                 step="0.01"
                                 value={formData.quantity}
                                 onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                                 required
                             />
                         </div>
@@ -315,7 +315,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                             <select
                                 value={formData.unit}
                                 onChange={(e) => setFormData({ ...formData, unit: e.target.value })}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                             >
                                 <option value="pieces">Pieces</option>
                                 <option value="kg">Kilograms</option>
@@ -334,7 +334,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                         <select
                             value={formData.category}
                             onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                         >
                             {CATEGORIES.map(cat => (
                                 <option key={cat} value={cat}>{cat}</option>
@@ -348,7 +348,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                             type="date"
                             value={formData.expiry_date}
                             onChange={(e) => setFormData({ ...formData, expiry_date: e.target.value })}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue500 focus:border-blue500 outline-none"
                         />
                     </div>
 
@@ -358,7 +358,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                             id="running-low"
                             checked={formData.is_running_low}
                             onChange={(e) => setFormData({ ...formData, is_running_low: e.target.checked })}
-                            className="w-4 h-4 text-emerald-500 border-gray-300 rounded focus:ring-emerald-500"
+                            className="w-4 h-4 text-blue500 border-gray-300 rounded focus:ring-blue500"
                         />
                         <label htmlFor="running-low" className="text-sm text-gray-700">
                             Mark as running low
@@ -376,7 +376,7 @@ const AddItemModal = ({ onClose, onSuccess }) => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="flex-1 px-4 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-medium transition-colors disabled:opacity-50"
+                            className="flex-1 px-4 py-2.5 bg-blue500 hover:bg-blue600 text-white rounded-lg font-medium transition-colors disabled:opacity-50"
                         >
                             {loading ? 'Adding...' : 'Add Item'}
                         </button>

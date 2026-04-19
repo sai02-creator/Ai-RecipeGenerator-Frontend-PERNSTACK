@@ -73,7 +73,7 @@ const MyRecipes = () => {
             <div className="min-h-screen bg-gray-50">
                 <Navbar />
                 <div className="flex items-center justify-center h-96">
-                    <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                 </div>
             </div>
         );
@@ -101,7 +101,7 @@ const MyRecipes = () => {
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 placeholder="Search recipes..."
-                                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                             />
                         </div>
 
@@ -109,7 +109,7 @@ const MyRecipes = () => {
                         <select
                             value={selectedCuisine}
                             onChange={(e) => setSelectedCuisine(e.target.value)}
-                            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                         >
                             {cuisines.map(cuisine => (
                                 <option key={cuisine} value={cuisine}>
@@ -122,7 +122,7 @@ const MyRecipes = () => {
                         <select
                             value={selectedDifficulty}
                             onChange={(e) => setSelectedDifficulty(e.target.value)}
-                            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                         >
                             {difficulties.map(diff => (
                                 <option key={diff} value={diff}>
@@ -160,7 +160,7 @@ const MyRecipes = () => {
                         {recipes.length === 0 && (
                             <Link
                                 to="/generate"
-                                className="inline-block bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-lg font-medium transition-colors"
+                                className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-medium transition-colors"
                             >
                                 Generate Your First Recipe
                             </Link>
@@ -178,14 +178,14 @@ const RecipeCard = ({ recipe, onDelete }) => {
     return (
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all group">
             {/* Recipe Image Placeholder */}
-            <div className="h-48 bg-linear-to-br from-emerald-100 to-emerald-200 flex items-center justify-center">
-                <ChefHat className="w-16 h-16 text-emerald-600" />
+            <div className="h-48 bg-linear-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                <ChefHat className="w-16 h-16 text-blue-600" />
             </div>
 
             {/* Recipe Content */}
             <div className="p-5">
                 <Link to={`/recipes/${recipe.id}`} className="block mb-3">
-                    <h3 className="font-semibold text-lg text-gray-900 group-hover:text-emerald-600 transition-colors line-clamp-2">
+                    <h3 className="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
                         {recipe.name}
                     </h3>
                     {recipe.description && (
@@ -196,7 +196,7 @@ const RecipeCard = ({ recipe, onDelete }) => {
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                     {recipe.cuisine_type && (
-                        <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded text-xs font-medium">
+                        <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">
                             {recipe.cuisine_type}
                         </span>
                     )}
@@ -230,7 +230,7 @@ const RecipeCard = ({ recipe, onDelete }) => {
                 <div className="flex gap-2 pt-4 border-t border-gray-100">
                     <Link
                         to={`/recipes/${recipe.id}`}
-                        className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white text-center py-2 rounded-lg font-medium transition-colors text-sm"
+                        className="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-center py-2 rounded-lg font-medium transition-colors text-sm"
                     >
                         View Recipe
                     </Link>

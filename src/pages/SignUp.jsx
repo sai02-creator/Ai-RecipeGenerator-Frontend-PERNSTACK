@@ -29,11 +29,11 @@ const SignUp = () => {
     };
 
     return (
-        <div className="min-h-screen bg-linear-to-br from-emerald-50 to-white flex items-center justify-center p-4">
+        <div className="min-h-screen bg-linear-to-br from-blue-50 to-white flex items-center justify-center p-4">
             <div className="w-full max-w-md">
                 {/* Logo */}
                 <div className="text-center mb-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-500 rounded-2xl mb-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-500 rounded-2xl mb-4">
                         <ChefHat className="w-9 h-9 text-white" />
                     </div>
                     <h1 className="text-3xl font-bold text-gray-900">Create Account</h1>
@@ -55,7 +55,7 @@ const SignUp = () => {
                                     type="text"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    className="w-full pl-11 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
+                                    className="w-full pl-11 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                                     placeholder="John Doe"
                                     required
                                 />
@@ -74,7 +74,7 @@ const SignUp = () => {
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full pl-11 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
+                                    className="w-full pl-11 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                                     placeholder="you@example.com"
                                     required
                                 />
@@ -93,7 +93,7 @@ const SignUp = () => {
                                     type="password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full pl-11 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
+                                    className="w-full pl-11 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                                     placeholder="••••••••"
                                     required
                                     minLength={6}
@@ -106,7 +106,7 @@ const SignUp = () => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-2.5 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             {loading ? 'Creating account...' : 'Create Account'}
                         </button>
@@ -115,7 +115,7 @@ const SignUp = () => {
                     {/* Login Link */}
                     <p className="text-center text-sm text-gray-600 mt-6">
                         Already have an account?{' '}
-                        <Link to="/login" className="text-emerald-600 hover:text-emerald-700 font-medium">
+                        <Link to="/login" className="text-blue-600 hover:text-blue-700 font-medium">
                             Sign in
                         </Link>
                     </p>
