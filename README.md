@@ -67,6 +67,9 @@ Neon PostgreSQL Database
 - 📦 **Optimised Build (Vite)**
   Fast development and high-performance production builds.
 
+- 🛡️ **Resilient API Handling**
+  Implements graceful error handling to manage temporary API failures and improve user experience.
+
 ---
 
 ## 🛠 Tech Stack
@@ -84,8 +87,9 @@ Neon PostgreSQL Database
 _Add real screenshots to improve recruiter visibility_
 
 ```markdown
-![Home Page](./screenshots/home.png)
 ![Dashboard](./screenshots/dashboard.png)
+![Recipe](./screenshots/recipe.png)
+![Pantry](./screenshots/pantry.png)
 ```
 
 ---
@@ -93,6 +97,20 @@ _Add real screenshots to improve recruiter visibility_
 ## 🌐 Live Website
 
 👉 http://ai-recipe-generator-frontend-sai123.s3-website-ap-southeast-2.amazonaws.com
+
+---
+
+## ⚠️ Handling AI API Limitations
+
+The application uses the Gemini API (free tier), which may occasionally return `503 Service Unavailable` responses during high demand.
+
+To ensure a stable user experience:
+
+- 🔁 Retry logic is implemented in the backend to automatically retry failed AI requests
+- ⚠️ The frontend displays user-friendly error messages instead of crashing
+- 🛡️ External API failures are handled gracefully to maintain application stability
+
+This ensures the system remains responsive even when the AI service is temporarily unavailable.
 
 ---
 
@@ -155,8 +173,8 @@ http://<EC2-IP>:8000/api
 - Built a scalable frontend using React and Vite
 - Integrated REST APIs with JWT-based authentication
 - Deployed a production-ready frontend on AWS S3
-- Connected frontend with a Dockerised backend on EC2
-- Designed UI for AI-powered dynamic content
+- Handled real-world API failures (Gemini 503 errors)
+- Improved user experience with graceful error handling
 
 ---
 
