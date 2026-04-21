@@ -58,12 +58,14 @@ Browser → React App (S3) → Backend API (EC2 Docker) → Neon PostgreSQL
 
 ## 🛠 Tech Stack
 
-**Frontend:** React (Vite)
-**API Communication:** Axios
-**Hosting:** AWS S3
-**Integration:** REST API (Node.js backend)
-
----
+<p>
+  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Vite-Build-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Axios-API-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AWS-S3-orange?style=for-the-badge&logo=amazon-aws&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-Neon-0080FF?style=for-the-badge&logo=postgresql&logoColor=white"/>
+</p>
 
 ## 🌐 Live Website
 
