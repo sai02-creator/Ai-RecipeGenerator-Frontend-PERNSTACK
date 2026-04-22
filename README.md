@@ -84,15 +84,9 @@ Neon PostgreSQL Database
 
 ## 📸 Screenshots
 
-_Add real screenshots to improve recruiter visibility_
-
-```markdown
-![Dashboard](./screenshots/dashboard.png)
-![Recipe](./screenshots/recipe.png)
-![Pantry](./screenshots/pantry.png)
-```
-
----
+![Dashboard](./frontend/screenshots/dashboard.png)  
+![Recipe](./frontend/screenshots/generate.png)  
+![Pantry](./frontend/screenshots/pantry.png)
 
 ## 🌐 Live Website
 
