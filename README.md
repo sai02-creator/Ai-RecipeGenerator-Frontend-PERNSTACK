@@ -41,6 +41,12 @@ Neon PostgreSQL Database
 
 ---
 
+## 📸 Screenshots
+
+![Dashboard](./screenshots/dashboard.png)  
+![Recipe](./screenshots/generate.png)  
+![Pantry](./screenshots/pantry.png)
+
 ## 🚀 Features
 
 - 🔐 **JWT-Based Authentication**
@@ -81,12 +87,6 @@ Neon PostgreSQL Database
 - 🗄️ **Database:** Neon PostgreSQL
 
 ---
-
-## 📸 Screenshots
-
-![Dashboard](./frontend/screenshots/dashboard.png)  
-![Recipe](./frontend/screenshots/generate.png)  
-![Pantry](./frontend/screenshots/pantry.png)
 
 ## 🌐 Live Website
 
